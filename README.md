@@ -1,60 +1,87 @@
 
 
+
 # Hemanth Token Contract
 
-This repository contains the Solidity code for the Hemanth ERC20 token. The token is implemented using the OpenZeppelin ERC20 contract and has an initial supply of 1000 tokens minted to the deployer's address.
+This repository contains the `Hemanth` ERC20 token contract. The `Hemanth` token (symbol: `He`) is an ERC20 token built using the OpenZeppelin library. The contract owner, referred to as the "King," has the ability to mint new tokens. Token holders can also burn their own tokens and transfer tokens to other addresses.
 
-## Getting Started
+## Features
 
-These instructions will help you deploy and interact with the Hemanth token contract on the Ethereum blockchain.
+- **Minting**: The contract owner can mint new tokens.
+- **Burning**: Token holders can burn their own tokens.
+- **Transferring**: Token holders can transfer tokens to other addresses.
 
-### Prerequisites
+## Contract Details
 
-Ensure you have the following installed on your local development machine:
+- **Name**: Hemanth
+- **Symbol**: He
 
-- Node.js
-- npm or yarn
-- Truffle or Hardhat (Ethereum development environments)
-- MetaMask (for interacting with the contract)
+## Functions
 
-### Installation
+### `mintToken(address account, uint256 amount)`
 
-1. **Clone the repository**:
-    
+Mints new tokens and assigns them to the specified account. Only the contract owner (King) can perform this action.
 
-2. **Install dependencies**:
-    
+**Parameters:**
+- `account`: The address to receive the minted tokens.
+- `amount`: The number of tokens to mint.
 
-3. **Compile the contract** (using Truffle or Hardhat):
-   
+### `burnToken(address account, uint256 amount)`
 
-### Deployment
+Burns a specified amount of tokens from the caller's account.
 
-1. **Deploy the contract** (using Truffle):
-    
+**Parameters:**
+- `account`: The address from which tokens will be burned. Must be the caller's own address.
+- `amount`: The number of tokens to burn.
 
-    Ensure you configure your network settings in the `truffle-config.js` or `hardhat.config.js` file.
+### `transferToken(address recipient, uint256 amount)`
 
-### Interacting with the Contract
+Transfers tokens from the caller's account to the specified recipient.
 
-Once deployed, you can interact with the contract using various methods. Below are some common interactions:
+**Parameters:**
+- `recipient`: The address to receive the tokens.
+- `amount`: The number of tokens to transfer.
 
-1. **Check the total supply**:
-    
+### Modifiers
 
-2. **Check the balance of an address**:
-    
+#### `onlyOwner`
 
-3. **Transfer tokens**:
-    `
+Ensures that only the contract owner (King) can call the modified function.
 
-### Contract Details
+## Deployment
 
-- **Contract Name**: Hemanth
-- **Token Symbol**: HE
-- **Initial Supply**: 1000 HE (minted to the deployer's address)
+To deploy the `Hemanth` contract:
 
-### Dependencies
+1. Ensure you have the required dependencies:
+   ```sh
+   npm install @openzeppelin/contracts
+   ```
 
-This project uses the OpenZeppelin library for the ERC20 implementation. You can find more information about OpenZeppelin contracts [here](https://openzeppelin.com/contracts/).
+2. Compile and deploy the contract using a development framework like Truffle or Hardhat.
+
+## Example Usage
+
+Here is an example of how to interact with the deployed contract:
+
+### Minting Tokens
+
+
+
+### Burning Tokens
+
+
+
+### Transferring Tokens
+
+
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+This contract uses the OpenZeppelin library for standard ERC20 functionality.
+
+
 
