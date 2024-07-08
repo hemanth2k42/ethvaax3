@@ -7,7 +7,7 @@ contract Hemanth is ERC20
 {
     address public King;
 
-    modifier onlyOwner() 
+    modifier onlyKing() 
     {
         require(msg.sender == King, "Only the contract King can perform this action");
         _;
@@ -18,7 +18,7 @@ contract Hemanth is ERC20
         King = msg.sender;
     }
 
-    function mintToken(address account, uint256 amount) external onlyOwner
+    function mintToken(address account, uint256 amount) external onlyKing
     {
         _mint(account, amount);
     }
