@@ -44,7 +44,7 @@ Transfers tokens from the caller's account to the specified recipient.
 
 ### Modifiers
 
-#### `onlyOwner`
+#### `onlyKing`
 
 Ensures that only the contract owner (King) can call the modified function.
 
